@@ -9,7 +9,9 @@
 body
 {
     font-family: Arial, sans-serif;
-    font-size: 15px;
+}
+img{
+    object-fit: cover;
 }
 h1,h2,h3,h4
 {
@@ -79,11 +81,16 @@ header nav ul li
     display: inline-block;
 }
 
-header nav ul li a
+header a
 {
     text-transform: uppercase;
     font-weight: bold;
     margin-right: 20px;
+}
+
+header nav ul li a:hover
+{
+    color: #ff7a00;
 }
 
 #menu-burger{
@@ -161,13 +168,14 @@ header nav ul li a
 
 #steps
 {
+    padding: 20px;
     margin: 80px auto;
 }
 
 #steps ul{
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
 }
 #steps ul li
 {
@@ -205,7 +213,7 @@ header nav ul li a
 #possibilities
 {
     background-color: #efefef;
-    padding: 60px 0;
+    padding: 100px 20px;
 }
 #possibilities .wrapper
 {
@@ -215,7 +223,7 @@ header nav ul li a
 }
 #possibilities article
 {
-    width: 460px;
+    width: 100%;
     height: 270px;
     border-radius: 10px;
 }
@@ -223,11 +231,12 @@ header nav ul li a
 {
     background: rgba(255, 255, 255, 0.95);
     height: 100%;
-    width: 190px;
+    max-width: 350px;
+    width: 200px;
+    min-width: 50%;
     padding: 20px;
     border-radius: 10px 0 0 10px;
     text-align: center;
-    box-sizing: border-box;
 }   
 article h4
 {
@@ -259,14 +268,14 @@ article h4
 
 #contact
 {
-    padding: 60px 0;
+    padding: 60px 20px;
     text-align: center;
 }
 #contact h3
 {
-    width: 400px;
+    max-width: 300px;
+    margin: 0 auto 20px auto;
     text-transform: uppercase;
-    margin:0 auto 20px auto;
     border-bottom:1px solid #02b8dd;
     padding-bottom: 20px;
 
@@ -274,20 +283,23 @@ article h4
 form{
     display: flex;
     justify-content: center;
-    margin: 60px 0 20px 0;
+    align-items: center;
+    margin: 40px 0 20px 0;
 }
 label
 {
+    text-align: left;
+    display: block;
     font-weight: bold;
     font-size: 20px;
-    margin-right: 10px;
     color: #777;
+    margin-right: 10px;
 }
 input[type="text"]
 {
     padding: 10px;
     font-size: 20px;
-    margin-right: 20px;
+    margin-right: 10px;
     border: 2px solid #ddd;
     border-radius: 3px;
 }
@@ -329,96 +341,79 @@ footer h1
     color: #777;
 }
 
-@media screen and (max-width:1000px) {
-     /* POSSIBILITIES */
-     #possibilities
-    {
-        padding: 50px 0;
-    }
-     #possibilities .wrapper
-     {
-         display: grid;
-         grid-template-columns: 100%;
-         gap: 30px;
-         justify-items: center;
-     }
 
-     #possibilities article:first-child
-    {
-        margin-right: 0;
-    }
-}
-
-@media screen and (max-width:960px) {
+@media all and (max-width: 768px) {
     /* HEADER */
-    header nav
-    {
+    header .wrapper{
+        align-items: flex-start;
+    }
+    header nav{
         display: none;
     }
 
-    /* MAIN-IMAGE */
-    #main-image
-    {
-        height: 500px;
-    }
-    #main-image h2
-    {
-        padding: 100px 0 40px 0;
-    }
-
-    /* STEPS */
-    .wrapper ul
-    {
-        display: flex;
-        justify-content: space-evenly;
-
-    }
-    #menu-burger{
+    header #menu-burger{
         display: block;
     }
 
     #burger:checked ~ .menu-responsive{
         transform: translateY(0);
     }
-}
 
-@media screen and (max-width:807px) {
+    /* STEPS */
+    #steps ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #steps ul li
+    {
+        width: 100%;
+    }
+
+    /* POSSIBILITIES */
+    #possibilities .wrapper
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    #possibilities article
+    {
+        width: 100%;
+        height: 270px;
+        border-radius: 10px;
+    }
+
     /* CONTACT */
     form{
         display: flex;
         flex-direction: column;
-        gap: 20px;
-        margin: 60px 0 20px 0;
+        align-items: flex-start;
+        gap: 10px;
+        margin: 40px 0 20px 0;
     }
     input[type="text"]
     {
-        margin-right: 0;
-    }
-    #name
-    {
-        margin-left: 6px;
+        width: 100%;
+        padding: 10px;
+        font-size: 20px;
+        margin-right: 20px;
+        border: 2px solid #ddd;
+        border-radius: 3px;
     }
     .button-3
     {
-        padding: 11px 85px;
-    }
-}
-
-@media screen and (max-width:765px) {
-    /* STEPS */
-    #steps .wrapper ul
-    {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-    }
-}
-
-@media screen and (max-width:280px) {
-    #contact p
-    {
-        font-size: 12px;
+        display: block;
+        width: 100%;
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 11px;
+        background-color: #02b8dd;
+        border-style: none;
+        border-radius: 3px;
+        margin-top: 0;
     }
 }
